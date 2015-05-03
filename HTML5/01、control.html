@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<label id="label">
+			<input placeholder="请输入六位数字" />
+						
+		</label>		
+		<button onclick="setValue()"> 设置默认值</button>
+	<script>
+		
+		function setValue(){
+			var label = document.getElementById("label");
+			var textBox = label.control;
+			textBox.value = "123456"
+		}
+		
+		
+	</script>
+	</body>
+</html>
