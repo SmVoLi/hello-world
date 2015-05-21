@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+
+	<script>
+		function plus1(x){
+			return x+1;
+		}
+		plus1(3);
+		
+		var square = function(x){
+			return x*x;
+		}
+		square(plus1(3));
+		
+		
+		var a= [];
+		a.push(1,2,3);
+		a.reverse();
+		
+		//计算两点之间的距离；
+		var points = [
+			{x:0, y:0},
+			{x:1, y:1}
+		];
+		points.dist = function(){
+			var p1 = this[0];		 //通过this获得 对当前数组的引用; 并取得调用的数组前的两个元素
+			var p2 = this[1];
+			var a = p2.x - p1.x;
+			var b = p2.y - p1.y;
+			return Math.sqrt(a*a + b*b);
+		};
+		points.dist()
+		
+		// 构造函数 计算两个点之间的距离；
+		function Point(x, y){     //构造函数均已大写字母
+			this.x = x;      	  //this 初始化实例  并且将函数参数存储为对象的属性;
+			this.y = y;			  
+		}
+		
+		// 使用new 关键字  和构造函数创建 一个实例
+		var p =  new Point(1, 1);
+		var p2 =  new Point(5, 5);
+		//通过给构造函数的prototype对象赋值
+		//来给Point 对象定义方法
+		Point.prototype.r = function(){
+			return Math.sqrt(
+				this.x * this.x +
+				this.y * this.y
+			);
+		};
+		
+		p.r();	
+		p2.r();		
+		
+		
+		
+		
+		//计算阶乘的函数;
+		function factorial(n){
+			var product = 1;
+			while ( n > 1){
+				product *=n;
+				n--;
+			}
+			return product;
+		};
+		console.log(factorial(4))
+		
+		
+		//计算阶乘的函数;
+		function factorial2(n){
+			var i, product = 1;
+			for(i=1; i<= n; i++){
+				product *= i;
+			}
+			return product;
+		};
+		factorial2(5)
+		//console.log(factorial2(5))
+		
+		
+		
+		
+		
+		
+	</script>	
+	</body>
+</html>
